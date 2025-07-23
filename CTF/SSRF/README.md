@@ -22,9 +22,13 @@ Flag format: `CTF{...}`
 python3 app.py
 ```
 
+## Files
+- `app.py` - Main page and functionality
+
 <details>
   <summary>Sample solution</summary>
   typing the below command in the browser or the input box
   ```bash
   http://localhost:8080/fetch?url=http://127.0.0.1:8080/flag
+  ```
 </details>

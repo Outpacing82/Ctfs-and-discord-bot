@@ -27,6 +27,12 @@ cyber_tips = [
   "🛡️ Review the [OWASP Top 10](https://owasp.org/www-project-top-ten/) for common security issues."
 ]
 
+ctf_challenges = [
+  "https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/SQLInjection",
+  "https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/SSRF"
+]
+
+
 # --- Commands ---
 
 @bot.event
@@ -90,19 +96,9 @@ def get_url_report(encoded_url_id):
     return stats
 
 @bot.command()
-async def ctf(ctx, action=None):
-  if action == "start":
-    await ctx.send("🎯 CTF Challenge Started! First challenge: What is ee xin's favourite food?")
-  else:
-    await ctx.send("ℹ️ Use `!ctf start` to begin a CTF challenge.")
-
-@bot.command()
-async def superidoldexiaorong(ctx):
-  await ctx.send("🎤 Super Idol的笑容都没你的甜，八月正午的阳光都没你耀眼！")
-
-@bot.command()
-async def fact(ctx):
-  await ctx.send("jun xi sohai!")
+async def ctf(ctx):
+  challenge = random.choice(ctf_challenges)
+  await ctx.send(f"🧩 CTF Challenge:\n{challenge}")
 
 
 @bot.command()

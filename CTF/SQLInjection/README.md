@@ -30,5 +30,7 @@ A simple vulnerable web app for practicing SQL Injection. Login as admin to get 
 
 <details>
   <summary>Sample solution</summary>
-  admin' --
+  ```bash
+    admin' --
+  ```
 </details>
