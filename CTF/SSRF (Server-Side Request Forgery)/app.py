@@ -21,16 +21,18 @@ def fetch():
         return "No URL provided", 400
     try:
         # Dangerous SSRF-vulnerable fetch
-        r = requests.get(url, timeout=2)
+        headers = {"X-Internal-SSRF": "1"}
+        r = requests.get(url, timeout=2, headers=headers)
         return r.text
     except Exception as e:
         return f"Error: {e}"
 
 @app.route("/flag")
 def flag():
-  if request.remote_addr == "127.0.0.1":
+  if request.headers.get("X-Internal-SSRF") == "1":
     return "CTF{ssrf_is_fun}"
   return "Access Denied", 403
+  
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=8080)
