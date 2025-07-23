@@ -20,6 +20,7 @@ Flag format: `CTF{...}`
 
 ```bash
 python3 app.py
+```
 
 <details>
   <summary>Sample solution</summary>

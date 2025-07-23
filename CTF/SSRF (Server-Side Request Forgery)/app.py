@@ -20,7 +20,7 @@ def fetch():
     if not url:
         return "No URL provided", 400
     try:
-        # Dangerous SSRF-vulnerable fetch
+        # Hint: match the header
         headers = {"X-Internal-SSRF": "1"}
         r = requests.get(url, timeout=2, headers=headers)
         return r.text
