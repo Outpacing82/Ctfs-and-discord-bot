@@ -21,11 +21,14 @@ A simple vulnerable web app for practicing SQL Injection. Login as admin to get 
 
 ## Files
 - `index.html` - Main page
-- `frontend.html` - Login form
+- `index.html` - Login form
 - `login.php` - Vulnerable login logic
 - `database.sql` - DB schema
 - `entrypoint.sh` - DB setup on container start
 
-## Note
-- The flag is stored in the database for the admin user.
-- Intended for educational/CTF use only.
+
+
+<details>
+  <summary>Sample solution</summary>
+  admin' --
+</details>
