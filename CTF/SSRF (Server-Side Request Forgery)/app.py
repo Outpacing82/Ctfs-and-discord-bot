@@ -31,3 +31,6 @@ def flag():
   if request.remote_addr == "127.0.0.1":
     return "CTF{ssrf_is_fun}"
   return "Access Denied", 403
+
+if __name__ == "__main__":
+  app.run(host="0.0.0.0", port=8080)

@@ -1,4 +1,4 @@
-# This is a web security CTF based on Server-Side Request Forgery (SSRF).
+# Server-Side Request Forgery (SSRF).
 
 ---
 
