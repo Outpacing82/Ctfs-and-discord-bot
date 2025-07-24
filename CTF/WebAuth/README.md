@@ -23,7 +23,9 @@ php -S localhost:8080
 ```
 
 ## Files
-- `app.py` - Main page and functionality
+- `flag.py` - user authentication
+- `index.php` - frontend
+- `login.php` - username and password assigner
 
 <details>
   <summary>Sample solution</summary>
