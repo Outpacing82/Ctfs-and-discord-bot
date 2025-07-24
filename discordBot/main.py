@@ -28,10 +28,12 @@ cyber_tips = [
 ]
 
 ctf_challenges = [
-    {"name": "SQL Injection", "path": "SQLInjection"},
-    {"name": "Server-Side Request Forgery", "path": "SSRF"},
-    {"name": "Web Authentication", "path": "WebAuth"},
-    {"name": "Server-Side Scripting", "path": "XSS"}
+  "[Binary Exploit](https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/BinaryExploit)",
+  "[Reverse Engineering](https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/ReverseEngineering)",
+  "[SQL Injection](https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/SQLInjection)",
+  "[SSRF (Server-side Request Forgery)](https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/SSRF)",
+  "[Web Authentication](https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/WebAuth)",
+  "[XSS (Cross-Site Scripting)](https://github.com/Outpacing82/Ctfs-and-discord-bot/tree/main/CTF/XSS)"
 ]
 
 # --- Commands ---
@@ -99,11 +101,7 @@ def get_url_report(encoded_url_id):
 @bot.command()
 async def ctf(ctx):
     challenge = random.choice(ctf_challenges)
-    title = challenge["name"]
-    path = challenge["path"]
-    readme = fetch_readme(path)
-    
-    await ctx.send(f"🧩 **CTF Challenge: {title}**\n```md\n{readme}\n```")
+    await ctx.send(f"🧩 **CTF Challenge: {challenge}")
 
 
 @bot.command()
@@ -125,13 +123,5 @@ async def on_message(message):
 
   await bot.process_commands(message)
 
-
-def fetch_readme(challenge_path):
-    raw_url = f"https://raw.githubusercontent.com/Outpacing82/Ctfs-and-discord-bot/main/CTF/{challenge_path}/README.md"
-    response = requests.get(raw_url)
-    if response.status_code == 200:
-        return response.text[:1900]  # Limit to Discord's 2000 char max
-    else:
-        return "README not found or failed to fetch."
 
 bot.run(token)
