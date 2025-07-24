@@ -31,8 +31,7 @@ def fetch():
 def flag():
   if request.headers.get("X-Internal-SSRF") == "1":
     return "CTF{ssrf_is_fun}"
-  return "Access Denied", 403
+  return "Access , Missing X-Internal-SSRF Header", 403
   
-
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=8080)

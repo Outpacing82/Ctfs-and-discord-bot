@@ -4,7 +4,7 @@
 
 ## Description
 
-> A developer made a simple web tool to "fetch URLs" using a web form.
+> A developer made a simple Flask web tool to "fetch URLs" using a web form.
 > Can you trick it into accessing a secret file that's meant to stay hidden?
 
 Your objective:  
@@ -28,6 +28,6 @@ python3 app.py
 <details>
   <summary>Sample solution</summary>
   typing the below command in the browser or the input box:
-  
+
  [http://localhost:8080/fetch?url=http://127.0.0.1:8080/flag](http://localhost:8080/fetch?url=http://127.0.0.1:8080/flag)
 </details>
