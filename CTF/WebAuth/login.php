@@ -1,24 +1,22 @@
 <?php
-session_start();
-
+// Simple username-password map
 $users = [
-  'user' => 'userpass',
-  'guest' => 'guest123',
-  // 'admin' => 'adminpass' — not stored or checked!
+    'guest' => 'guest123',
+    'user' => 'userpass',
 ];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['uid'];
-  $password = $_POST['pwd'];
+// Get login info
+$username = $_POST['uid'] ?? '';
+$password = $_POST['pwd'] ?? '';
 
-  // Intended logic flaw: if user is admin, skip password check
-  if ($username === 'admin') {
-    $_SESSION['identity'] = 'admin';
-  } elseif (isset($users[$username]) && $users[$username] === $password) {
-    $_SESSION['identity'] = $username;
-  }
-
-  header("Location: index.php");
-  exit;
+// Validate
+if (isset($users[$username]) && $users[$username] === $password) {
+    // Create base64-encoded cookie
+    $data = json_encode(['user' => $username]);
+    $encoded = base64_encode($data);
+    setcookie("auth", $encoded, time() + 3600);
+    header("Location: flag.php");
+    exit;
+} else {
+    echo "Invalid credentials.";
 }
-?>

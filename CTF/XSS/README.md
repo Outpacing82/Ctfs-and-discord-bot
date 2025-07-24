@@ -1,7 +1,7 @@
 # Cross-Site Scripting(XSS) CTF Challenge
 
 ## Description
-A simple vulnerable web app for practicing XSS. Login as admin to get the flag!
+A simple vulnerable web app for practicing XSS. Pop an alert to get the flag!
 
 ## How to Run Locally (PHP)
 

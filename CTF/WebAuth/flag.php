@@ -1,17 +1,18 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['identity'])) {
-  echo "You must be logged in.";
-  exit;
+if (!isset($_COOKIE['auth'])) {
+    echo "Not logged in.";
+    exit;
 }
 
-if ($_SESSION['identity'] !== 'admin') {
-  echo "Access restricted to admin only.";
-  exit;
+$cookie = base64_decode($_COOKIE['auth']);
+$data = json_decode($cookie, true);
+
+if (!isset($data['user']) || $data['user'] !== 'admin') {
+    echo "Access denied. Admins only.";
+    exit;
 }
 
-echo "<h2>Admin Portal</h2>";
-echo "<p>Your flag is: flag{SUCCESS!}</p>";
+$flag = trim(file_get_contents("flag.txt"));
+echo "<h2>Welcome, admin!</h2>";
+echo "<p>Your flag is: <code>$flag</code></p>";
 ?>
-

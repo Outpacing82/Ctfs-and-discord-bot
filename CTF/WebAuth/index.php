@@ -14,12 +14,4 @@ session_start();
     <input type="password" name="pwd" placeholder="Password" required><br><br>
     <input type="submit" value="Login">
   </form>
-
-  <?php
-  if (isset($_SESSION['identity'])) {
-    echo "<p>Welcome, " . htmlspecialchars($_SESSION['identity']) . "!</p>";
-    echo '<p><a href="flag.php">Access Portal</a></p>';
-  }
-  ?>
-</body>
 </html>

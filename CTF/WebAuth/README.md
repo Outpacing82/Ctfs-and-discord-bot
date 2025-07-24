@@ -4,9 +4,11 @@
 
 ## Description
 
-> Only the admin has access to the secret flag through a portal.
-> Can you log in as the admin and retrieve the flag?
-
+Only the admin has access to the secret flag through a portal.
+Can you log in as the admin and retrieve the flag?
+Start with:
+username: guest 
+password: guest123
 ---
 
 ## How to Run Locally 
