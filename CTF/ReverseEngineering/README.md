@@ -17,6 +17,9 @@ The hardest CTF challenge amongst the list I made! Try to decode the key!
 ## Note
 - The flag is stored in the database for the admin user.
 
+## Challenge Difficulty
+- write code that will solve the CTF no matter what keys and targt groups were used.
+
 <details>
   <summary>Sample solution</summary>
 
