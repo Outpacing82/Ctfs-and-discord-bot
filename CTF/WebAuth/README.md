@@ -7,10 +7,6 @@
 > Only the admin has access to the secret flag through a portal.
 > Can you log in as the admin and retrieve the flag?
 
-Your objective:  
-Trick the proxy to retrieve the flag hidden at `/flag.txt`
-Flag format: `CTF{...}`
-
 ---
 
 ## How to Run Locally 
